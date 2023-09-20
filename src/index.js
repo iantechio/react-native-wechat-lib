@@ -7,8 +7,9 @@ let isAppRegistered = false;
 let { WeChat, WechatLib } = NativeModules;
 
 if (WeChat == null) {
-  WeChat = WechatLib;
+  WeChat = WechatLib || {};
 }
+
 
 // Event emitter to dispatch request and response from WeChat.
 const emitter = new EventEmitter();
